@@ -87,7 +87,7 @@ local function GetTeamsString()
     end;
 
     table.sort(TeamList, function(str1, str2) return str1 < str2 end);
-    
+
     return TeamList;
 end;
 
@@ -551,7 +551,7 @@ do
             Parent = HueSelectorOuter;
         });
 
-        local HueCursor = Library:Create('Frame', { 
+        local HueCursor = Library:Create('Frame', {
             BackgroundColor3 = Color3.new(1, 1, 1);
             AnchorPoint = Vector2.new(0, 0.5);
             BorderColor3 = Color3.new(0, 0, 0);
@@ -617,8 +617,8 @@ do
         });
 
         local TransparencyBoxOuter, TransparencyBoxInner, TransparencyCursor;
-        
-        if Info.Transparency then 
+
+        if Info.Transparency then
             TransparencyBoxOuter = Library:Create('Frame', {
                 BorderColor3 = Color3.new(0, 0, 0);
                 Position = UDim2.fromOffset(4, 251);
@@ -646,7 +646,7 @@ do
                 Parent = TransparencyBoxInner;
             });
 
-            TransparencyCursor = Library:Create('Frame', { 
+            TransparencyCursor = Library:Create('Frame', {
                 BackgroundColor3 = Color3.new(1, 1, 1);
                 AnchorPoint = Vector2.new(0.5, 0);
                 BorderColor3 = Color3.new(0, 0, 0);
@@ -756,7 +756,7 @@ do
                     TextXAlignment = Enum.TextXAlignment.Left,
                 });
 
-                Library:OnHighlight(Button, Button, 
+                Library:OnHighlight(Button, Button,
                     { TextColor3 = 'AccentColor' },
                     { TextColor3 = 'FontColor' }
                 );
@@ -2601,7 +2601,7 @@ do
         local Depbox = {
             Dependencies = {};
         };
-        
+
         local Groupbox = self;
         local Container = Groupbox.Container;
 
@@ -2975,6 +2975,19 @@ function Library:CreateWindow(...)
 
     Library:MakeDraggable(Outer, 25);
 
+    local Grow = Library:Create("ImageLabel", {
+        AnchorPoint = Vector2.new(0.5, 0.5);
+        BorderSizePixel = 0;
+        BackgroundTransparency = 1;
+        Image = "rbxassetid://75104796032482";
+        ImageColor3 = Library.AccentColor;
+        Position = UDim2.fromScale(0.5, 0.5),
+        Size = Config.Size + UDim2.fromOffset(50, 50),
+        Visible = true;
+        ZIndex = 0;
+        Parent = Outer;
+    });
+
     local Inner = Library:Create('Frame', {
         BackgroundColor3 = Library.MainColor;
         BorderColor3 = Library.AccentColor;
@@ -3053,7 +3066,7 @@ function Library:CreateWindow(...)
         ZIndex = 2;
         Parent = MainSectionInner;
     });
-    
+
 
     Library:AddToRegistry(TabContainer, {
         BackgroundColor3 = 'MainColor';
