@@ -2979,7 +2979,7 @@ function Library:CreateWindow(...)
 
     Library:MakeDraggable(Outer, 25);
 
-    local Grow = Library:Create("ImageLabel", {
+    local Glow = Library:Create("ImageLabel", {
         AnchorPoint = Vector2.new(0.5, 0.5);
         BorderSizePixel = 0;
         BackgroundTransparency = 1;
