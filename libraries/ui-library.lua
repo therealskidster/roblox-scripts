@@ -2836,6 +2836,10 @@ function Library:SetWatermarkVisibility(Bool)
     Library.Watermark.Visible = Bool;
 end;
 
+function Library:SetKeybindVisibility(Bool)
+    Library.KeybindFrame.Visible = Bool;
+end;
+
 function Library:SetWatermark(Text)
     local X, Y = Library:GetTextBounds(Text, Library.Font, 14);
     Library:SetWatermarkVisibility(true)
